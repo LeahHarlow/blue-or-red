@@ -4,7 +4,7 @@ const Balloons = () => {
 
   return (
     <div>
-      Hi
+      Balloons
     </div>
   );
 };

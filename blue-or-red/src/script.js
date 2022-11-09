@@ -34,3 +34,17 @@ console.log("COOKIE STRING", document.cookie
 
 //   //cookieCheck()
 
+   function getNumber(){
+    let x =  document.cookie
+      .toString()
+      .split(';')
+      .filter((cookie) => cookie.includes('timesVisited'))
+      console.log(x)
+      let str = x[0]
+      str = str.split('')
+      let cut=  str.indexOf('=');
+      return str.slice(cut+1)
+   };
+
+console.log('Get Number', getNumber());
+

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const UserReport = () => {
-  const [timesVisited, setTimesVisited] = useState('');
+  const [timesVisited, setTimesVisited] = useState();
 
   const generateUserReport = () => {
     let cookieVisits = document.cookie

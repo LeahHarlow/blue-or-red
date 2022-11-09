@@ -4,7 +4,7 @@
 }
 
 .App-header {
-  background-color: rgb(234, 232, 228);
+  background-color: #F5F0E0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,30 +19,30 @@ img {
   box-shadow: -5px 5px 10px rgb(163, 160, 160);
 }
 
-button{
+button {
   margin: 3%;
   width: 15vw;
   min-width: 100px;
   height: 2vh;
   min-height: 40px;
   border-radius: 5px;
-  background-color:rgb(202, 230, 230);
+  background-color: #D2DADA;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 1vh;
 }
 
-button:hover{
+button:hover {
   width: 20vw;
   height: 3vh;
   transition: 1s;
 }
 
-.redText{
-  color: red;
+.redText {
+  color: #E01300;
 }
 
-.blueText{
-  color: blue;
+.blueText {
+  color: #0069CC;
 }
 
 

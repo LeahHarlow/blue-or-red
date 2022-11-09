@@ -1,7 +1,7 @@
 
  document.cookie = 'colour=red; expires=' + new Date(2023, 0, 1).toUTCString();
 
- document.cookie = 'timesVisited=1; expires=' + new Date(2023, 0, 1).toUTCString();
+ document.cookie = 'timesVisited=13; expires=' + new Date(2023, 0, 1).toUTCString();
 
 console.log(document.cookie.toString().split(';').filter((cookie) => cookie.includes('colour')))
 
@@ -43,7 +43,11 @@ console.log("COOKIE STRING", document.cookie
       let str = x[0]
       str = str.split('')
       let cut=  str.indexOf('=');
-      return str.slice(cut+1)
+      let num = str.slice(cut+1)
+      if(num.length > 1){
+        num = num.join('');
+      }
+      return num
    };
 
 console.log('Get Number', getNumber());

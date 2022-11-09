@@ -3,9 +3,9 @@ import React, { useEffect } from "react";
 const UserReport = () => {
 
   return (
-    <div>
-      UserReport
-    </div>
+    <>
+      <button>Click For User Report</button>
+    </>
   );
 };
 

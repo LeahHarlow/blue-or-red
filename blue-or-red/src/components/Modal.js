@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 
-export const Modal = ({ onClose, children }) => {
+const Modal = ({ onClose, children }) => {
   // Close on escape key is inside here.
   useEffect(() => {
     const listener = (e) => {
@@ -29,3 +29,5 @@ export const Modal = ({ onClose, children }) => {
     </div>
   );
 };
+
+export default Modal;

@@ -35,6 +35,7 @@ const Balloons = () => {
     }
   }, []);
 
+  // Our return statement will check state to populate the page with the appropriate colour and text
   return (
     <>
       {balloonColour === 'red' ? (

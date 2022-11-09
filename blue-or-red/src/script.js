@@ -34,21 +34,21 @@ console.log("COOKIE STRING", document.cookie
 
 //   //cookieCheck()
 
-   function getNumber(){
-    let x =  document.cookie
-      .toString()
-      .split(';')
-      .filter((cookie) => cookie.includes('timesVisited'))
-      console.log(x)
-      let str = x[0]
-      str = str.split('')
-      let cut=  str.indexOf('=');
-      let num = str.slice(cut+1)
-      if(num.length > 1){
-        num = num.join('');
-      }
-      return num
-   };
+//    function getNumber(){
+//     let x = document.cookie
+//       .toString()
+//       .split(';')
+//       .filter((cookie) => cookie.includes('timesVisited'))
+//       console.log(x)
+//       let str = x[0]
+//       str = str.split('')
+//       let cut=  str.indexOf('=');
+//       let num = str.slice(cut+1)
+//       if(num.length > 1){
+//         num = num.join('');
+//       }
+//       return num
+//    };
 
-console.log('Get Number', getNumber());
+// console.log('Get Number', getNumber());
 

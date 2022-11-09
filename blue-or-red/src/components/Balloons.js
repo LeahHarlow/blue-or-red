@@ -51,7 +51,6 @@ const Balloons = () => {
       <div className={balloonColour === 'blue' ? 'blueText': 'redText'}>
       {`Congratulations! You got ${balloonColour} balloons!`}
       </div>
-      {}
     </>
   );
 };

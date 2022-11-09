@@ -1,6 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useState } from 'react';
 
 const UserReport = () => {
+  const [timesVisited, setTimesVisited] = useState('');
+
+  const generateUserReport = () => {
+    let cookieVisits = document.cookie
+      .toString()
+      .split(';')
+      .filter((cookie) => cookie.includes('timesVisited'));
+    if (timesVisited.length) {
+      setTimesVisited(cookieVisits.toString());
+    }
+  };
 
   return (
     <>

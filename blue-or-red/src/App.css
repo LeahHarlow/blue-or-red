@@ -1,10 +1,9 @@
 .App {
   text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .App-header {
-  background-color: #F5F0E0;
+  background: #F5F0E0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,6 +16,7 @@ img {
   border-radius: 25px;
   margin: 3%;
   box-shadow: -5px 5px 10px rgb(163, 160, 160);
+  border: #ebba52 2px solid;
 }
 
 button {
@@ -26,25 +26,30 @@ button {
   height: 2vh;
   min-height: 40px;
   border-radius: 10px;
-  background-color: #D2DADA;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 1vh;
-  border: #E01300 2px solid;
-  color: #460904;
+  background-color: #619797;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 2vh;
+  border: #ebba52 2px solid;
+  color: #f5b937;
 }
 
 button:hover {
-  width: 20vw;
-  height: 3vh;
+  width: 16vw;
   transition: 1s;
+  border: #ebba52 2px solid;
+  background-color: #b2cece;
+  color: #c08404;
 }
 
 .redText {
   color: #E01300;
+  text-shadow:#FFA299 -2px 2px 5px;
 }
 
 .blueText {
   color: #0069CC;
+  text-shadow:#99E6FF -2px 2px 5px;
 }
 
 #modal {
@@ -53,7 +58,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   border-radius: 25px;
-
+  padding: 10%;
 }
 
 #modal-container {
@@ -62,7 +67,7 @@ button:hover {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 95vh;
+  height: 100vh;
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -78,5 +83,11 @@ button:hover {
   width: 33vw;
   height: 33vh;
   background: #F5F0E0;
+  border: #ebba52 2px solid;
+}
+
+#main-text {
+  font-family: Monaco;
+  font-size: 40px;
 }
 

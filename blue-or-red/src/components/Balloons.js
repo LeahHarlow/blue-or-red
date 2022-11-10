@@ -7,7 +7,6 @@ const Balloons = () => {
   //This function will assign red or blue at rendom for the users to see
   const randoColour = () => {
     let colour = Math.floor(Math.random(2)) === 1 ? 'blue' : 'red';
-    //console.log(colour)
     document.cookie = `colour=${colour}`;
     return colour;
   };
@@ -35,7 +34,7 @@ const Balloons = () => {
     }
   }, []);
 
-  // Our return statement will check state to populate the page with the appropriate colour and text
+  //The return statement will check state to populate the page with the appropriate colour and text
   return (
     <>
       {balloonColour === 'red' ? (
@@ -49,8 +48,8 @@ const Balloons = () => {
           alt='marbled blue balloons in front of a white brick wall'
         />
       )}
-      <div className={balloonColour === 'blue' ? 'blueText': 'redText'}>
-      {`Whoo hoo! You got ${balloonColour} balloons!`}
+      <div id='main-text' className={balloonColour === 'blue' ? 'blueText' : 'redText'}>
+        {`Whoo hoo! You got ${balloonColour} balloons!`}
       </div>
     </>
   );

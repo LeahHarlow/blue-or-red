@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 
 const Modal = ({ onClose, children }) => {
-  // Close on escape key is inside here.
+  //hitting the escape key or clicking in the grey will exit modal
   useEffect(() => {
     const listener = (e) => {
       console.log(e);

@@ -14,7 +14,7 @@
   color: rgb(8, 0, 0);
 }
 img {
-  border-radius: 20px;
+  border-radius: 25px;
   margin: 3%;
   box-shadow: -5px 5px 10px rgb(163, 160, 160);
 }
@@ -25,7 +25,7 @@ button {
   min-width: 100px;
   height: 2vh;
   min-height: 40px;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #D2DADA;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 1vh;
@@ -59,16 +59,11 @@ button:hover {
   position: fixed;
   top: 0;
   left: 0;
-  /* vw and vh */
   width: 100vw;
   height: 95vh;
   z-index: 2;
-
-  /*flex stuff below*/
   display: flex;
-  /* alignment on the MAIN axis (default horizontal) */
   justify-content: center;
-  /* alignment on the CROSS axis (default vertical) */
   align-items: center;
 }
 
@@ -80,6 +75,6 @@ button:hover {
   border-radius: 25px;
   width: 33vw;
   height: 33vh;
-  background: #fff6f6;
+  background: #F5F0E0;
 }
 

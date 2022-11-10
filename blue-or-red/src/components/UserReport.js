@@ -4,6 +4,7 @@ import Modal from './Modal';
 const UserReport = () => {
   const [timesVisited, setTimesVisited] = useState();
   const [showModal, setModalIsShowing] = useState(false);
+  const [plural, setPlural] = useState(false);
 
   //this function will find the cookie created to track the number of times a user has visited this page in their browser and parse the cookie string for the number of times the user saw either colour and set it to state
   const parceTimesVisited = () => {
@@ -17,8 +18,12 @@ const UserReport = () => {
     let num = str.slice(cut + 1);
     if (num.length > 1) {
       num = num.join('');
+      setPlural(true);
+    } else{
+      setPlural(false);
     }
     setTimesVisited(num);
+
   };
 
   //function to run when generate report is clicked that will pop up modal and propogate with the number of times the user has visited the page
@@ -26,6 +31,8 @@ const UserReport = () => {
     parceTimesVisited();
     setModalIsShowing(true);
   };
+
+  //function to clear cookies from Modal?
 
   return (
     <>
@@ -39,7 +46,7 @@ const UserReport = () => {
           }}
         >
           <div id="modal">
-            {"Modal Content"}
+            {`You've seen this beautiful picture ${timesVisited} time${plural === true ? 's' : ''}!`}
           </div>
         </Modal>
       )}

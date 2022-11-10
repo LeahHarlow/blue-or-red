@@ -6,7 +6,7 @@ const UserReport = () => {
   const [timesVisited, setTimesVisited] = useState(0);
  const [plural, setPlural] = useState(false);
 
-  //function to increase the value of the cookie tracking the number of times a user visited the page
+  //function to increase the value of the timesVisited cookie, tracking the number of times a user viewed the page in the same browser or without clearing their cookies
   const upCookieCount = () => {
     let cookieVisits = document.cookie
       .toString()
@@ -31,7 +31,7 @@ const UserReport = () => {
     setModalIsShowing(true);
   };
 
-  const pageLoad = () => {
+  useEffect(() => {
     if (
       !document.cookie
         .toString()
@@ -43,10 +43,6 @@ const UserReport = () => {
     } else {
       upCookieCount();
     }
-  };
-
-  useEffect(() => {
-    pageLoad();
   }, []);
 
   return (

@@ -28,8 +28,8 @@ const UserReport = () => {
 
   //function to increase the value of the cookie tracking the number of times a user visited the page
   const upCookieCount = () => {
-    console.log(timesVisited)
-    document.cookie = `timesVisited=${timesVisited+1}; expires=` + new Date(2023, 0, 1).toUTCString();
+    console.log('TIMES VISITED', typeof(timesVisited))
+    document.cookie = `timesVisited=${parseInt(timesVisited)+1}; expires=` + new Date(2023, 0, 1).toUTCString();
     parceTimesVisited();
   }
 

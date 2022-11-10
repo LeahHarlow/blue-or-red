@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from './Modal';
 
 const UserReport = () => {
-  const [timesVisited, setTimesVisited] = useState();
+  const [timesVisited, setTimesVisited] = useState(0);
   const [showModal, setModalIsShowing] = useState(false);
   const [plural, setPlural] = useState(false);
 
@@ -22,24 +22,23 @@ const UserReport = () => {
     } else{
       setPlural(false);
     }
-    setTimesVisited(num);
+    //console.log(num[0])
+    setTimesVisited(num[0]);
   };
 
   //function to increase the value of the cookie tracking the number of times a user visited the page
   const upCookieCount = () => {
     console.log(timesVisited)
-    document.cookie = `timesVisited=${1}; expires=` + new Date(2023, 0, 1).toUTCString();
+    document.cookie = `timesVisited=${timesVisited+1}; expires=` + new Date(2023, 0, 1).toUTCString();
+    parceTimesVisited();
   }
 
   //function to run when generate report is clicked that will pop up modal and propogate with the number of times the user has visited the page
   const generateUserReport = () => {
     parceTimesVisited();
     setModalIsShowing(true);
-    if(timesVisited){
-      upCookieCount();
-    }
+    upCookieCount();
   };
-
 
   //function to clear cookies from Modal?
 

@@ -1,7 +1,7 @@
 
  document.cookie = 'colour=blue; expires=' + new Date(2023, 0, 1).toUTCString();
 
- document.cookie = 'timesVisited=3; expires=' + new Date(2023, 0, 1).toUTCString();
+//  document.cookie = 'timesVisited=3; expires=' + new Date(2023, 0, 1).toUTCString();
 
 console.log(document.cookie.toString().split(';').filter((cookie) => cookie.includes('colour')))
 

@@ -6,22 +6,6 @@ const UserReport = () => {
   const [timesVisited, setTimesVisited] = useState(0);
  const [plural, setPlural] = useState(false);
 
-  //this function will find the cookie created to track the number of times a user has visited this page in their browser and parse the cookie string for the number of times the user saw either colour and set it to state
-  // const parceTimesVisited = () => {
-  //   let cookieVisits = document.cookie
-  //     .toString()
-  //     .split(';')
-  //     .filter((cookie) => cookie.includes('timesVisited'));
-  //   let str = cookieVisits[0];
-  //   str = str.split('');
-  //   let cut = str.indexOf('=');
-  //   let num = str.slice(cut + 1);
-  //   let joinedNum = num.join('');
-  //   return parseInt(joinedNum);
-  // };
-
-  //let timesVisited = parceTimesVisited();
-
   //function to increase the value of the cookie tracking the number of times a user visited the page
   const upCookieCount = () => {
     let cookieVisits = document.cookie
@@ -80,7 +64,6 @@ const UserReport = () => {
             {`You've seen this beautiful picture ${timesVisited} time${
               plural === true ? 's' : ''
             }!`}
-            {/* {`${timesVisited}`} */}
           </div>
         </Modal>
       )}

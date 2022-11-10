@@ -35,6 +35,7 @@ const Balloons = () => {
     }
   }, []);
 
+  // Our return statement will check state to populate the page with the appropriate colour and text
   return (
     <>
       {balloonColour === 'red' ? (
@@ -49,9 +50,8 @@ const Balloons = () => {
         />
       )}
       <div className={balloonColour === 'blue' ? 'blueText': 'redText'}>
-      {`Congratulations! You got ${balloonColour} balloons!`}
+      {`Whoo hoo! You got ${balloonColour} balloons!`}
       </div>
-      {}
     </>
   );
 };

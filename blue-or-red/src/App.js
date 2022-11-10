@@ -1,6 +1,6 @@
 
 import './App.css';
-import './script.js'
+import './easyManipulation.js'
 import Balloons from './components/Balloons'
 import UserReport from './components/UserReport';
 

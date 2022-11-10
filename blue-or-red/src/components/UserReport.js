@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 
 const UserReport = () => {
-  const [timesVisited, setTimesVisited] = useState(0);
   const [showModal, setModalIsShowing] = useState(false);
-  const [plural, setPlural] = useState(false);
+  // const [plural, setPlural] = useState(false);
+  //let plural = false;
 
   //this function will find the cookie created to track the number of times a user has visited this page in their browser and parse the cookie string for the number of times the user saw either colour and set it to state
- const parceTimesVisited = () => {
+  const parceTimesVisited = () => {
     let cookieVisits = document.cookie
       .toString()
       .split(';')
@@ -16,29 +16,50 @@ const UserReport = () => {
     str = str.split('');
     let cut = str.indexOf('=');
     let num = str.slice(cut + 1);
-    if (num.length > 1 || num > 1) {
-      num = num.join('');
-      setPlural(true);
-    } else{
-      setPlural(false);
-    }
-    //console.log(num[0])
-    setTimesVisited(num[0]);
+    let joinedNum = num.join('');
+    return parseInt(joinedNum);
   };
+
+  let timesVisited = parceTimesVisited();
 
   //function to increase the value of the cookie tracking the number of times a user visited the page
   const upCookieCount = () => {
-    console.log('TIMES VISITED', typeof(timesVisited))
-    document.cookie = `timesVisited=${parseInt(timesVisited)+1}; expires=` + new Date(2023, 0, 1).toUTCString();
-    parceTimesVisited();
-  }
+    let cookieVisits = document.cookie
+      .toString()
+      .split(';')
+      .filter((cookie) => cookie.includes('timesVisited'));
+    let str = cookieVisits[0];
+    str = str.split('');
+    let cut = str.indexOf('=');
+    let num = str.slice(cut + 1);
+    let joinedNum = num.join('');
+    document.cookie =
+      `timesVisited=${parseInt(joinedNum)+1}; expires=` +
+      new Date(2023, 0, 1).toUTCString();
+  };
 
   //function to run when generate report is clicked that will pop up modal and propogate with the number of times the user has visited the page
   const generateUserReport = () => {
-    parceTimesVisited();
     setModalIsShowing(true);
-    upCookieCount();
   };
+
+  const pageLoad = () => {
+    if (
+      !document.cookie
+        .toString()
+        .split(';')
+        .filter((cookie) => cookie.includes('timesVisited'))
+    ) {
+      document.cookie =
+        'timesVisited=1; expires=' + new Date(2025, 0, 1).toUTCString();
+    } else {
+      upCookieCount();
+    }
+  };
+
+  useEffect(() => {
+    pageLoad();
+  }, []);
 
   //function to clear cookies from Modal?
 
@@ -53,8 +74,11 @@ const UserReport = () => {
             setModalIsShowing(false);
           }}
         >
-          <div id="modal">
-            {`You've seen this beautiful picture ${timesVisited} time${plural === true ? 's' : ''}!`}
+          <div id='modal'>
+            {/* {`You've seen this beautiful picture ${timesVisited} time${
+              plural === true ? 's' : ''
+            }!`} */}
+            {`${timesVisited}`}
           </div>
         </Modal>
       )}

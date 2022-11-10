@@ -7,7 +7,7 @@ const UserReport = () => {
   const [plural, setPlural] = useState(false);
 
   //this function will find the cookie created to track the number of times a user has visited this page in their browser and parse the cookie string for the number of times the user saw either colour and set it to state
-  const parceTimesVisited = () => {
+ const parceTimesVisited = () => {
     let cookieVisits = document.cookie
       .toString()
       .split(';')
@@ -16,21 +16,30 @@ const UserReport = () => {
     str = str.split('');
     let cut = str.indexOf('=');
     let num = str.slice(cut + 1);
-    if (num.length > 1) {
+    if (num.length > 1 || num > 1) {
       num = num.join('');
       setPlural(true);
     } else{
       setPlural(false);
     }
     setTimesVisited(num);
-
   };
+
+  //function to increase the value of the cookie tracking the number of times a user visited the page
+  const upCookieCount = () => {
+    console.log(timesVisited)
+    document.cookie = `timesVisited=${1}; expires=` + new Date(2023, 0, 1).toUTCString();
+  }
 
   //function to run when generate report is clicked that will pop up modal and propogate with the number of times the user has visited the page
   const generateUserReport = () => {
     parceTimesVisited();
     setModalIsShowing(true);
+    if(timesVisited){
+      upCookieCount();
+    }
   };
+
 
   //function to clear cookies from Modal?
 
